@@ -1,0 +1,27 @@
+# server/fly.toml
+app = "campus-usa"
+primary_region = "iad"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  DJANGO_SETTINGS_MODULE = "config.settings_production"
+  PORT = "8000"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[deploy]
+  # run migrations and collectstatic during release (when DATABASE_URL is available)
+  release_command = "sh -c 'for i in {1..10}; do python manage.py migrate --noinput && python manage.py collectstatic --noinput && break || sleep 5; done'"

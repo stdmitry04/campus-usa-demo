@@ -1,0 +1,226 @@
+# ===================================
+# ROOT .gitignore for Campus USA Project
+# ===================================
+
+# ===================================
+# Python/Django Backend (server/)
+# ===================================
+
+# Virtual environments
+server/.venv/
+server/venv/
+server/env/
+.venv/
+venv/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django specific
+server/db.sqlite3
+server/db.sqlite3-journal
+server/media/
+server/staticfiles/
+server/static/
+*.log
+local_settings.py
+
+# ===================================
+# Next.js/React Frontend (website/)
+# ===================================
+
+# Dependencies
+website/node_modules/
+node_modules/
+
+# Next.js build output
+website/.next/
+website/out/
+
+# Production builds
+website/build/
+
+# TypeScript
+website/*.tsbuildinfo
+website/next-env.d.ts
+
+# ===================================
+# Environment Variables (SENSITIVE!)
+# ===================================
+
+# Environment files - NEVER commit these!
+.env
+.env.*
+!.env.example
+server/.env
+server/.env.*
+!server/.env.example
+website/.env
+website/.env.*
+!website/.env.example
+
+# ===================================
+# IDE and Editor Files
+# ===================================
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# WebStorm/PyCharm
+.idea/
+*.swp
+*.swo
+*~
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ===================================
+# Operating System Files
+# ===================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# ===================================
+# Logs and Temporary Files
+# ===================================
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# ===================================
+# Package Manager Files
+# ===================================
+
+# npm
+website/package-lock.json*
+
+# Yarn
+website/.yarn/*
+!website/.yarn/patches
+!website/.yarn/plugins
+!website/.yarn/releases
+!website/.yarn/versions
+website/.pnp.*
+
+# pnpm
+website/.pnpm-debug.log*
+
+# ===================================
+# Security and Sensitive Data
+# ===================================
+
+# SSL certificates
+*.pem
+*.key
+*.cert
+
+# API keys and secrets (just in case)
+secrets.json
+config/secrets.py
+
+# Database backups
+*.dump
+*.backup
+
+# ===================================
+# Deployment and Build Artifacts
+# ===================================
+
+# Docker
+.dockerignore
+
+# Deployment configs (may contain secrets)
+docker-compose.override.yml
+
+# Cloud deployment
+.vercel
+.netlify
+
+# ===================================
+# Testing and Development
+# ===================================
+
+# Testing
+.coverage
+.pytest_cache/
+.tox/
+htmlcov/
+
+# Jupyter Notebooks (if you add any data analysis)
+.ipynb_checkpoints
+
+# ===================================
+# Project Specific
+# ===================================
+
+# User uploaded files (in development)
+server/media/uploads/
+server/media/documents/
+server/media/avatars/
+
+# Local development database
+server/local.db
+
+# Backup files
+*.bak
+*.backup
+
+# test files
+server/documents/tests/
