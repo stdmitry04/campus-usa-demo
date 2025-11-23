@@ -93,8 +93,8 @@ else:
     }
     print("⚠️ using sqlite fallback database")
 
-# openai configuration
-OPENAI_API_KEY = config('OPENAI_API_KEY')
+# openai configuration (optional - required for AI features)
+OPENAI_API_KEY = config('OPENAI_API_KEY', default='')
 
 # application definition
 INSTALLED_APPS = [
@@ -205,8 +205,7 @@ AWS_S3_FILE_OVERWRITE = False  # don't overwrite files with same name
 AWS_S3_CUSTOM_DOMAIN = None  # don't use cloudfront for now
 
 # use s3 storage in production, local storage in development
-# USE_S3_STORAGE = config('USE_S3_STORAGE', default=True, cast=bool)
-USE_S3_STORAGE = True
+USE_S3_STORAGE = config('USE_S3_STORAGE', default=False, cast=bool)
 
 if USE_S3_STORAGE:
     # check if credentials are available
